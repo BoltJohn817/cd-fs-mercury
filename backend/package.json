@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node dist/server.js",
     "build": "tsc -p ./",
-    "prestart:dev": "npm install",
+    "prestart:dev": "yarn install",
     "start:dev": "nodemon",
-    "pretest": "npm install",
+    "pretest": "yarn install",
     "test": "nodemon --exec 'mocha -r ts-node/register test/**/*.test.ts' --watch test --watch src"
   },
   "author": "",
