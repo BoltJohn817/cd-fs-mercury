@@ -1,5 +1,3 @@
 export const EmployeeDetail = () => {
-  return (
-		<h2>Employee Detail</h2>
-	)
-}
+  return <h2>Employee Detail</h2>;
+};
