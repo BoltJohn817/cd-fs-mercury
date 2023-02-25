@@ -6,6 +6,7 @@
     "sourceMap": true /* Generates corresponding '.map' file. */,
     "rootDir": "./src" /* Concatenate and emit output to single file. */,
     "outDir": "./dist" /* Redirect output structure to the directory. */,
+    "resolveJsonModule": true,
 
     /* Strict Type-Checking Options */
     "strict": true /* Enable all strict type-checking options. */,

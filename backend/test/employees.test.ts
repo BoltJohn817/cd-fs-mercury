@@ -12,7 +12,7 @@ describe("#employees", () => {
     expect(res.body).not.to.be.empty;
     expect(res.body).to.be.a("array");
     expect(res.body.length).to.equal(5);
-    expect(res.body[0].id).to.equal("82837");
+    expect(res.body[0].id).to.equal(82837);
     expect(res.body.error).to.be.undefined;
   });
 });

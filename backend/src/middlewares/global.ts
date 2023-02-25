@@ -36,7 +36,8 @@ export const cors = (req: Request, res: Response, next: NextFunction) => {
   res.header("Access-Control-Allow-Methods", "GET");
 
   if (req.method == "OPTIONS" || req.method == "HEAD") {
-    return res.status(200).end();
+    res.status(200).end();
+    return;
   }
 
   // On the 5th second of a request simulate a timeout

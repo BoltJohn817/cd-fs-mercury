@@ -22,10 +22,41 @@ For the entire process, please document any changes you made and _why_ you made 
 
 ### Features
 
-- [ ] Add an endpoint for `/departments/:id` which returns just the employees for that department
-- [ ] Add a test for your new endpoint
+- [V] Add an endpoint for `/departments/:id` which returns just the employees for that department
+  - Added a new endpoint for `/departments/:id`.
+    - Line 13 - 25 at `routes/index.ts`
+- [V] Add a test for your new endpoint
+  - Added test case for department endpoints
+  - `test/departments.test.ts`
 
 ### Optional (Bugs)
 
-- [ ] Fix failing tests
-- [ ] Ensure data correctness
+- [V] Fix failing tests
+
+  - The test fails because the cors middleware doesn't always return value. To match the return type, I modified the original return statement.
+    - Line 39, 40 at `middlewares/global.ts`.
+
+- [V] Ensure data correctness
+  - Updated the data model for the database correctness.
+    
+    Removed the `employees` field in department type.
+
+    Updated the `id` field type to number. For the last data with `zc` as `id`, set new key value to number `82339`.
+    - `types/index.ts`
+    - `db/departments.json`, `db/employees.json`.
+    - Line 15 at `test/employees.test.ts`.
+
+## What I did more.
+
+- To reuse the departments and employee data. 
+
+  I moved them to new file `db/departments.json` and `db/employees.json` and imported on `routes/index.ts`.
+  
+  The data types are created inside of the `types/index.ts`. 
+  
+  Added configuration on `tsconfig.json` to import JSON data.
+
+  - Line 3 - 5 at `routes/index.ts`
+  - `db/empoyees.json`, `db/departments.json`
+  - `types/index.ts`
+  - Line 9 at `tsconfig.json`

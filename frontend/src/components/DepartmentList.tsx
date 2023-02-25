@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Department } from "../models/Models";
 import api from "../utils/api";
+import { ErrorMessage } from "./ErrorMessage";
+import { LoadingIndicator } from "./LoadingIndicator";
 
 export const DepartmentList = () => {
   const [departments, setDepartments] = useState<Department[] | undefined>();
@@ -16,9 +19,9 @@ export const DepartmentList = () => {
   }, []);
 
   if (!departments) {
-    return <p>Loading Departments...</p>;
+    return <LoadingIndicator message="Loading Departments..." />;
   } else if (departments.length === 0) {
-    return <p>No departments</p>;
+    return <ErrorMessage>No departments</ErrorMessage>;
   }
 
   return (
@@ -27,7 +30,11 @@ export const DepartmentList = () => {
 
       <ul>
         {departments.map((d) => (
-          <li>{d.name}</li>
+          <li key={`department-${d.id}`}>
+            <h3>
+              <Link to={`/department/${d.id}`}>{d.name}</Link>
+            </h3>
+          </li>
         ))}
       </ul>
     </>

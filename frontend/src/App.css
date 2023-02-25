@@ -1,6 +1,5 @@
 header {
-  width: 100%;
-  background-color: grey;
+  background-color: lightskyblue;
   margin: 0;
   padding: 20px;
 }
@@ -16,4 +15,66 @@ header > ul > li {
 
 .mainContent {
   padding: 1em;
+}
+
+body {
+  background-color: gray;
+  box-sizing: border-box;
+}
+
+#root {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  align-self: center;
+  max-width: 800px;
+  min-height: 100vh;
+
+  background-color: white;
+}
+
+a {
+  padding: 3px 10px;
+
+  color: black;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-bottom: 2px solid black;
+
+  transition: all 0.2s;
+}
+
+a:hover{
+  color: darkgray;
+  border-bottom-color: darkgray;
+}
+
+@keyframes fade {
+  from {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+  to {
+    color: transparent;
+  }
+}
+
+.loading_indicator {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+
+  font-size: 2em;
+  font-weight: bold;
+
+  animation: fade;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.error {
+  margin: 20px;
+  color: red;
 }

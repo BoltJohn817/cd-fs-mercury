@@ -1,16 +1,12 @@
 export interface Employee {
-  id: string;
+  id: number;
   name: string;
-  birthday: Date;
+  birthday: string;
   bio: string;
   departmentId: string;
 }
 
 export interface Department {
-  id: string;
+  id: number;
   name: string;
-}
-
-export interface DepartmentDetail extends Department{
-  employees: Employee[]
 }
